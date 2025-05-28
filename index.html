@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Fitness Tracker</title>
+  <link rel="stylesheet" href="global style.css">
+  <link rel="stylesheet" href="style.css">
+  <script defer src="index/script.js"></script>
+</head>
+<body>
+  <div class="sidebar">
+    <div class="profile">
+      <img src="pictures/logo.jpg" alt="Logo">
+      <h2>Welcome!</h2>
+    </div>
+    <nav>
+      <a href="profile.html" class="active">Login🏠</a>
+    </nav>
+  </div>
+
+  <div class="main-content">
+    <div class="container">
+      <h1>Welcome to An-G Fit 💪</h1>
+      <p>Let’s set up your fitness journey.</p>
+
+      <form id="userForm" action="profile.html" method="GET">
+  <label>Name:
+    <input type="text" id="name" name="name" required />
+  </label>
+
+  <label>Password:
+    <input type="password" id="password" name="password" required />
+  </label>
+
+  <label>Gender (optional):
+    <select id="gender" name="gender">
+      <option value="">Prefer not to say</option>
+      <option value="male">Male</option>
+      <option value="female">Female</option>
+    </select>
+  </label>
+
+  <label>Height (cm):
+    <input type="number" id="height" name="height" required />
+  </label>
+
+  <label>Weight (kg):
+    <input type="number" id="weight" name="weight" required />
+  </label>
+
+  <fieldset>
+    <legend>Fitness Goals (you can choose more than one):</legend>
+    <label><input type="checkbox" name="goals" value="lose weight" /> Lose Weight</label><br>
+    <label><input type="checkbox" name="goals" value="build muscle" /> Build Muscle</label><br>
+    <label><input type="checkbox" name="goals" value="stay fit" /> Stay Fit</label>
+  </fieldset>
+
+  <button type="submit">Calculate BMI & Continue →</button>
+</form>
+
+
+      <div id="bmiResult" style="display: none;"></div>
+    </div>
+  </div>
+</body>
+</html>

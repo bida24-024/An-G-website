@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>BMI Calculator – An-G Fit</title>
+  <link rel="stylesheet" href="BMI/BMI style.css">
+  <link rel="stylesheet" href="BMI/styles.css">
+  <style>
+    .bmi-container {
+      max-width: 500px;
+      margin: auto;
+      padding: 20px;
+      background-color: rgba(0, 0, 0, 0.614);
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+    .bmi-container input {
+      width: 100%;
+      padding: 10px;
+      margin: 10px 0;
+      border: 1px solid #c4bb99;
+      border-radius: 4px;
+    }
+    .bmi-container button {
+      padding: 10px 15px;
+      background-color: #333;
+      color: #ffffff;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+    .bmi-container button:hover {
+      background-color: #555;
+    }
+    #bmiResult {
+      margin-top: 15px;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <div class="sidebar">
+    <div class="profile">
+      <img src="pictures/logo.jpg" alt="Logo">
+      <h2>An-G Fit</h2>
+    </div>
+    <nav>
+      <a href="profile.html">🏠 Home</a>
+      <a href="progress.html">📈 Progress</a>
+    </nav>
+  </div>
+
+  <div class="main-content">
+    <div class="container">
+      <h1>Calculate Your BMI</h1>
+      <div class="bmi-container">
+        <label for="height">Height (cm):</label>
+        <input type="number" id="height" placeholder="e.g. 175">
+
+        <label for="weight">Weight (kg):</label>
+        <input type="number" id="weight" placeholder="e.g. 70">
+
+        <button onclick="calculateBMI()">Calculate BMI</button>
+        <p id="bmiResult"></p>
+
+        <button onclick="goBack()" style="margin-top: 20px;">⬅ Back</button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function calculateBMI() {
+      const height = parseFloat(document.getElementById("height").value);
+      const weight = parseFloat(document.getElementById("weight").value);
+      const result = document.getElementById("bmiResult");
+
+      if (!height || !weight || height <= 0 || weight <= 0) {
+        result.textContent = "Please enter valid height and weight.";
+        return;
+      }
+
+      const bmi = (weight / ((height / 100) ** 2)).toFixed(1);
+      let status = "";
+
+      if (bmi < 18.5) status = "Underweight";
+      else if (bmi < 24.9) status = "Normal weight";
+      else if (bmi < 29.9) status = "Overweight";
+      else status = "Obese";
+
+      result.textContent = `Your BMI is ${bmi} (${status})`;
+    }
+
+    function goBack() {
+      if (document.referrer) {
+        window.history.back();
+      } else {
+        window.location.href = "profile.html";
+      }
+    }
+  </script>
+</body>
+</html>

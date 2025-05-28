@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>About – An-G Fit</title>
+  <link rel="stylesheet" href="global style.css">
+  <link rel="stylesheet" href="about/about.css">
+</head>
+<body>
+  <div class="sidebar">
+    <div class="profile">
+      <img src="pictures/logo.jpg" alt="Logo">
+      <h2>An-G Fit</h2>
+    </div>
+    <nav>
+      <a href="about.html"> About Us📄</a>
+    </nav>
+  </div>
+
+  <div class="main-content">
+    <div class="container">
+      <h1>About An-G Fit</h1>
+      <p>An-G Fit is a personalized fitness tracking platform that helps you stay on top of your goals with custom workout plans, progress tracking, BMI analysis, and motivational tools. If you are in special need of any personalised assistance dont hesitate to reach out to us directly at +267 75480539 or alternatively 
+        An-Gteam@gmail.com</p>
+      
+      <h2>Key Features</h2>
+      <ul>
+        <li>📝 Custom workout routines tailored to your goals</li>
+        <li>📊 Real-time progress tracking with visual charts</li>
+        <li>🧠 BMI and health metrics analysis</li>
+        <li>⏱️ Session timers, editable logs, and completion checkboxes</li>
+        <li>🗓️ Daily workout scheduling and history tracking</li>
+      </ul>
+
+      <button onclick="goBack()" style="margin-top: 20px;">⬅ Back</button>
+    </div>
+  </div>
+
+  <script>
+    function goBack() {
+      if (document.referrer) {
+        window.history.back();
+      } else {
+        window.location.href = "profile.html"; 
+      }
+    }
+  </script>
+</body>
+</html>

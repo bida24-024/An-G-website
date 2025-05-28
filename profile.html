@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Your Profile – An-G Fit</title>
+  <link rel="stylesheet" href="global style.css">
+  <link rel="stylesheet" href="profile/profile.css">
+  <script defer src="profile/profile.js"></script>
+  <script defer src="profile/workouts.js"></script>
+</head>
+<body>
+  <div class="sidebar">
+    <div class="profile">
+      <img src="pictures/logo.jpg" alt="Logo">
+      <h2>Welcome!</h2>
+    </div>
+    <nav>
+      <a href="profile.html"> home🏠</a>
+      <a href="bmi.html">📏 BMI</a>
+      <a href="progress.html">📈 Progress</a>
+      <a href="about.html">📄 About Us</a>
+      <button onclick="logout()"> ❌Logout</button>
+    </nav>
+  </div>
+
+  <div class="main-content">
+    <div class="profile-summary" id="userProfileData"></div>
+
+    <div class="container">
+    
+
+      <hr>
+      <section>
+        <h2>Add a New Workout</h2>
+        <label for="workoutType">Select Workout Type:</label>
+        <select id="workoutType">
+          <option value="">-- Choose Workout --</option>
+          <option value="Cardio">Cardio</option>
+          <option value="Strength Training">Strength Training</option>
+          <option value="Yoga">Yoga</option>
+          <option value="Core">Core</option>
+          <option value="Full Body">Full Body</option>
+        </select>
+       <button id="continueWorkoutBtn" style="margin-top: 10px;">Proceed</button>
+      </section>
+
+      <hr>
+
+      <div style="text-align: center; margin-top: 30px;">
+  <button id="viewProgressBtn" class="progress-btn">📈 View Progress</button>
+</div>
+
+
+      <!-- Workout History -->
+      <section id="workoutHistorySection">
+        <h2>Your Workout History</h2>
+        <ul id="workoutList"></ul>
+      </section>
+    </div>
+  </div>
+  <script>
+  const userData = JSON.parse(localStorage.getItem('userData'));
+
+  if (userData) {
+    document.getElementById('userProfileData').innerHTML = `
+      <h2>Welcome, ${userData.name}!</h2>
+      <p><strong>Gender:</strong> ${userData.gender || 'Not specified'}</p>
+      <p><strong>Height:</strong> ${userData.height} cm</p>
+      <p><strong>Weight:</strong> ${userData.weight} kg</p>
+      <p><strong>BMI:</strong> ${userData.bmi} (${userData.bmiStatus})</p>
+      <p><strong>Goals:</strong> ${userData.goals.join(', ') || 'None selected'}</p>
+    `;
+  } else {
+    document.getElementById('userProfileData').innerHTML = `
+      <p>No user data found. Please <a href="index.html">go back</a> and fill the form.</p>
+    `;
+  }
+</script>
+
+</body>
+</html>
+
+

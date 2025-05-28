@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Progress – An-G Fit</title>
+  <link rel="stylesheet" href="global style.css">
+  <link rel="stylesheet" href="progress/styles.css">
+  <script defer src="progress/progress.js"></script>
+</head>
+<body>
+  <div class="sidebar">
+    <div class="profile">
+      <img src="pictures/logo.jpg" alt="Logo">
+      <h2>Progress</h2>
+    </div>
+    <nav>
+      <a href="profile.html">🏠 Home</a>
+      <a href="progress.html" class="active">Progress📈</a>
+    </nav>
+  </div>
+
+  <div class="main-content">
+    <div class="container">
+      <h1>Your Progress</h1>
+
+      <section>
+        <h2>Workout History</h2>
+        <table>
+          <thead>
+            <tr>
+              <th>Date</th>
+              <th>Workout</th>
+              <th>Planned</th>
+              <th>Completed</th>
+              <th>Duration (min)</th>
+            </tr>
+          </thead>
+          <tbody id="historyTableBody"></tbody>
+        </table>
+      </section>
+
+      <section>
+        <h2>Summary</h2>
+        <p>Workout Completion Rate: <span id="completionRate">Loading...</span></p>
+        <p>Average Session Duration: <span id="averageDuration">Loading...</span></p>
+      </section>
+
+
+    </div>
+  </div>
+</body>
+</html>
