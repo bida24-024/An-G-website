@@ -1,0 +1,136 @@
+/* Sidebar */
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 240px;
+  height: 100vh;
+  background-color: #000000;
+  color: rgb(255, 255, 255);
+  padding: 10px 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.sidebar .profile img {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  margin-bottom: 10px;
+}
+
+.sidebar h2 {
+  font-size: 24px;
+  margin-bottom: 30px;
+}
+
+.sidebar nav a {
+  display: block;
+  margin: 15px 0;
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+  transition: 0.3s ease;
+}
+
+.sidebar nav a:hover,
+.sidebar nav a.active {
+  color: #00a8ff;
+}
+
+/* Main Content */
+.main-content {
+  margin-left: 240px;
+  padding: 60px 40px;
+  min-height: 100vh;
+  color: #ffffff;
+  background-image: url('pictures/gym bg.jpg')no-repeat center center;
+  background-size: cover;
+  background-attachment: fixed;
+  background-blend-mode: overlay;
+  background-color: rgba(30, 39, 46, 0.85); /* subtle dark overlay */
+}
+
+.hero h1 {
+  font-size: 36px;
+  margin-bottom: 10px;
+}
+
+.hero p {
+  font-size: 18px;
+  margin-bottom: 30px;
+}
+
+.buttons {
+  margin-bottom: 30px;
+}
+
+.button {
+  display: inline-block;
+  background-color: #00a8ff;
+  color: white;
+  padding: 12px 18px;
+  margin-right: 15px;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: background 0.3s ease;
+}
+
+.button:hover {
+  background-color: #0097e6;
+}
+
+/* Form Styling */
+.goals-form {
+  max-width: 400px;
+}
+
+.goals-form label,
+.goals-form select,
+.goals-form button {
+  display: block;
+  width: 100%;
+  margin-bottom: 15px;
+}
+
+.goals-form select,
+.goals-form button {
+  padding: 10px;
+  border-radius: 6px;
+  border: none;
+  font-size: 16px;
+}
+
+.goals-form button {
+  background-color: #00a8ff;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.goals-form button:hover {
+  background-color: #0097e6;
+}
+
+/* Muscle Card Section */
+.muscle-card {
+  background: url('muscles.jpg') no-repeat center center;
+  background-size: cover;
+  background-color: rgba(0, 0, 0, 0.4); /* Dark overlay */
+  background-blend-mode: overlay;
+  padding: 20px;
+  margin-bottom: 20px;
+  border-radius: 8px;
+  color: #fff;
+  position: relative;
+}
+
+.saved-text {
+  color: #00ff88;
+  font-size: 0.9rem;
+  margin-top: 5px;
+}
+
+
